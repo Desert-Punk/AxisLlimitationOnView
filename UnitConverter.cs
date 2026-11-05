@@ -1,11 +1,8 @@
 ﻿using Autodesk.Revit.DB;
 
-namespace MyRevitPlugin.Utils
+namespace AxisLimitationOnView
 {
-    /// <summary>
-    /// Перевод единиц для Revit 2019 (через DisplayUnitType).
-    /// </summary>
-    public static class Units
+    public static class UnitConverter
     {
         /// <summary>Миллиметры → внутренние единицы Revit (футы).</summary>
         public static double MmToInternal(double mm)

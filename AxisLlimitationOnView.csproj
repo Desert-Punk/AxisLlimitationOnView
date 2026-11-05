@@ -1,26 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<OutputType>Library</OutputType>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>$(DefineConstants);REVIT2022_OR_LATER</DefineConstants>
-  </PropertyGroup>
+		<!-- 1. ДОБАВЛЕНО ДЛЯ WPF -->
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>$(DefineConstants);REVIT2022_OR_LATER</DefineConstants>
-  </PropertyGroup>
+	<!-- 2. УДАЛЕНЫ БЛОКИ С REVIT2022_OR_LATER (так как у нас Revit 2019) -->
 
-  <ItemGroup>
-    <Reference Include="RevitAPI">
-      <HintPath>..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2019\RevitAPI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="RevitAPIUI">
-      <HintPath>..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2019\RevitAPIUI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+		<!-- 3. ИСПРАВЛЕНЫ ПУТИ К REVIT API -->
+		<Reference Include="RevitAPI">
+			<HintPath>$(ProgramFiles)\Autodesk\Revit 2019\RevitAPI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="RevitAPIUI">
+			<HintPath>$(ProgramFiles)\Autodesk\Revit 2019\RevitAPIUI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
 
 </Project>
