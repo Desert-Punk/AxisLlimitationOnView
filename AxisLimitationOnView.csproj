@@ -8,6 +8,10 @@
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <Compile Remove="App.cs" />
+	</ItemGroup>
+
 	<!-- 2. УДАЛЕНЫ БЛОКИ С REVIT2022_OR_LATER (так как у нас Revit 2019) -->
 
 	<ItemGroup>
